@@ -1,10 +1,11 @@
-public class task {
+public class Task {
     int id;
     String title;
-    boolean isCompleted = false;
+    boolean isCompleted;
 
-    public task(int id, String title) {
+    public Task(int id, String title) {
         this.id = id;
         this.title = title;
+        this.isCompleted = false;
     }
 }
