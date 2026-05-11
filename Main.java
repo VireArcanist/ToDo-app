@@ -27,12 +27,21 @@ public class Main {
                 manager.showTasks();
             } else if (input.equals("3")){
                 System.out.print("Enter task ID to complete: ");
-                int id = Integer.parseInt(scanner.nextLine());
-                manager.completeTask(id);
+                // Use try-catch to handle potential NumberFormatException when parsing the task ID
+                try {
+                    int id = Integer.parseInt(scanner.nextLine());
+                    manager.completeTask(id);
+                } catch (NumberFormatException e) {
+                    System.out.println("\nPlease enter a valid number.");
+                }
             } else if (input.equals("4")){
                 System.out.print("Enter task ID to delete: ");
-                int id = Integer.parseInt(scanner.nextLine());
-                manager.deleteTask(id);
+                try {
+                    int id = Integer.parseInt(scanner.nextLine());
+                    manager.deleteTask(id);
+                } catch (NumberFormatException e) {
+                    System.out.println("\nPlease enter a valid number.");
+                }
             }
         }
         // Close the scanner to prevent resource leaks
